@@ -1,27 +1,36 @@
 <template>
   <div>
-    <input type="text" v-model="val" />
-    <br />
-    <input type="text" v-bind:value="val1" @input="inputFn" />
+    <div>
+      <span>年龄:</span>
+      <input type="text" v-model.number="age">
+    </div>
+    <br>
+    <div>
+      <span>人生格言:</span>
+      <input type="text" v-model.trim="motto">
+    </div>
+    <br>
+    <div>
+      <span>自我介绍:</span>
+      <textarea cols="30" rows="10" v-model.lazy="intro"></textarea>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   data() {
     return {
-      val: "",
-      val1: "",
-    };
+      age: '',
+      motto: '',
+      intro: ''
+    }
   },
   methods: {
-    inputFn(e) {
-      console.log(e.target.value);
-      this.val1 = e.target.value;
-    },
-  },
-};
+
+  }
+}
 </script>
 
 <style>
