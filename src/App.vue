@@ -1,8 +1,7 @@
 <template>
   <div>
-    <input type="text" @keydown.enter="enterFn">
-    <br>
-    <input type="text" @keydown.esc="escFn">
+    <h1>{{ msg }}</h1>
+    <button @click="clickFn">翻转</button>
   </div>
 </template>
 
@@ -11,15 +10,12 @@ export default {
   name: 'App',
   data() {
     return {
-
+      msg: 'Hello fzy'
     }
   },
   methods: {
-    enterFn() {
-      console.log("enter");
-    },
-    escFn() {
-      console.log("esc");
+    clickFn(){
+      this.msg=this.msg.split('').reverse().join('')
     }
   }
 }
