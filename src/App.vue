@@ -1,21 +1,21 @@
 <template>
     <div>
-        <h1>{{ msg }}</h1>
-        <h2>{{ obj.name }}</h2>
-        <h3>{{ obj.age >= 18 ? '成年' : '未成年' }}</h3>
+        <a v-bind:href="href">点击去百度</a>
+        <img v-bind:src="imgUrl">
+        <img :src="imgLocal">
+        <img src="./assets/logo.png">
     </div>
 </template>
 
 <script>
+import imgLocal from './assets/logo.png'
 export default {
     name: 'App',
     data() {
         return {
-            msg: 'Hello,fzy',
-            obj: {
-                name: 'fzy',
-                age: 17
-            }
+            href: 'http://www.baidu.com',
+            imgUrl: 'http://yun.itheima.com/Upload/./Images/20210412/60741c11ab77b.jpg',
+            imgLocal: imgLocal,
         }
     }
 }
