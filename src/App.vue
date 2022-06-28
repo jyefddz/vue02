@@ -1,10 +1,8 @@
 <template>
-  <div @click="fatherFn">
-    <span @click.stop="one" href="http://www.baidu.com">.stop阻止事件冒泡</span>
+  <div>
+    <input type="text" @keydown.enter="enterFn">
     <br>
-    <a @click.prevent.stop href="http://www.baidu.com">.prevent阻止默认行为</a>
-    <br>
-    <button @click.once="btn">.once程序运行期间,只触发一次事件处理函数</button>
+    <input type="text" @keydown.esc="escFn">
   </div>
 </template>
 
@@ -17,14 +15,11 @@ export default {
     }
   },
   methods: {
-    fatherFn() {
-      console.log('father');
+    enterFn() {
+      console.log("enter");
     },
-    one() {
-      console.log('span');
-    },
-    btn() {
-      console.log('btn');
+    escFn() {
+      console.log("esc");
     }
   }
 }
