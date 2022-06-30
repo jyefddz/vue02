@@ -1,38 +1,23 @@
 <template>
     <div>
-        <p>商品总数{{ count }}</p>
-        <button v-on:click="count++">+1</button>
-        <button v-on:click="addFn">+1</button>
-        <button v-on:click="addFn1(5)">+5</button>
-        <button @click="subFn">-1</button>
-        <button @click="clrFn">清空</button>
+        <a v-bind:href="href">点击去百度</a>
+        <img v-bind:src="imgUrl" />
+        <img :src="imgLocal" />
+        <img src="./assets/logo.png" />
     </div>
 </template>
 
 <script>
+import imgLocal from './assets/logo.png';
 export default {
     name: 'App',
     data() {
         return {
-            count: 0
-        }
+            href: 'http://www.baidu.com',
+            imgUrl:
+                'http://yun.itheima.com/Upload/./Images/20210412/60741c11ab77b.jpg',
+            imgLocal: imgLocal,
+        };
     },
-    methods: {
-        addFn() {
-            this.count++
-        },
-        addFn1(val) {
-            this.count += val
-        },
-        subFn() {
-            this.count--;
-        },
-        clrFn() {
-            this.count = 0
-        }
-    }
-}
+};
 </script>
-
-<style>
-</style>
